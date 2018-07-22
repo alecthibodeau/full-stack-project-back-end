@@ -1,36 +1,33 @@
 # Original inheritance from scaffold…
-# class TabsController < ApplicationController
+  # class TabsController < ApplicationController
 
 # New inheritance, to give us access to current_user…
 # require 'pry'
 # class TabsController < OpenReadController
-# class TabsController < ApplicationController
 class TabsController < ProtectedController
   before_action :set_tab, only: [:show, :update, :destroy]
 
   # GET /tabs
   def index
-    # Existing…
-    # @tabs = Tab.all
+    # Original line from scaffold…
+      # @tabs = Tab.all
     # Danny's IQ recommendation…
-    # binding.pry
     @tabs = current_user.tabs
-
     render json: @tabs
   end
 
   # GET /tabs/1
   def show
-    # render json: Tab.find(params[:id])
     # Danny's IQ recommendation…
     @tab = current_user.tabs.find(params[:id])
-
     render json: @tab
+    # Original line from scaffold…
+      # render json: Tab.find(params[:id])
   end
 
   # POST /tabs
   def create
-    # Danny's lesson includes binding 'pry'
+    # Danny's lesson includes binding.pry here
     # Original @tabs line from scaffold…
       # @tab = Tab.new(tab_params)
     # New @tabs line borrowed from examples_controller.rb…
@@ -61,9 +58,9 @@ class TabsController < ProtectedController
     # Use callbacks to share common setup or constraints between actions.
     def set_tab
       # code based on Elizabeth's issue number 1643…
-      # @tab = current_user.tabs.find(params[:id])
+      @tab = current_user.tabs.find(params[:id])
       # original code…
-      @tab = Tab.find(params[:id])
+        # @tab = Tab.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
