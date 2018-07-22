@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 # Danny's lesson…
-class RecipesController < OpenReadController
-before_action :check_admin
-  def index
-    #accessible by anyone
-  end
-
-  def show
-    #open
-  end
-
-  def create
-    # <User …> User which matches token
-    # must be signed in
-  end
-end
+# class RecipesController < OpenReadController
+# before_action :check_admin
+#   def index
+#     #accessible by anyone
+#   end
+#
+#   def show
+#     #open
+#   end
+#
+#   def create
+#     # <User …> User which matches token
+#     # must be signed in
+#   end
+# end
 
 class ExamplesController < OpenReadController
   before_action :set_example, only: %i[update destroy]
