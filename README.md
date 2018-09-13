@@ -1,5 +1,5 @@
 # RadTabs
-## Full-Stack Project: Front-End
+## Full-Stack Project: Back-End
 
 ## Description
 
